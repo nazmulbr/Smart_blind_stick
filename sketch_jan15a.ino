@@ -67,7 +67,7 @@ void loop() {
 
   // ================== PRIORITY LOGIC ==================
 
-  // 1️⃣ WATER DETECTION (HIGHEST PRIORITY)
+  // WATER DETECTION (HIGHEST PRIORITY)
   if (waterValue > 100) {
     Serial.println("STATUS: WATER DETECTED !!!");
     Serial.println("ACTION: CONSTANT VIBRATION + BUZZER");
@@ -78,7 +78,7 @@ void loop() {
     return;
   }
 
-  // 2️⃣ IR SENSOR (VERY CLOSE OBJECT)
+  // IR SENSOR (VERY CLOSE OBJECT)
   if (irState == LOW) {
     Serial.println("STATUS: VERY CLOSE OBJECT (IR)");
     Serial.println("ACTION: STRONG VIBRATION + BUZZER");
@@ -89,7 +89,7 @@ void loop() {
     return;
   }
 
-  // 3️⃣ ULTRASONIC DISTANCE BASED ALERTS
+  // ULTRASONIC DISTANCE BASED ALERTS
   if (distance > 120) {
     Serial.println("ZONE: SAFE ZONE");
     Serial.println("VIBRATION: OFF | BUZZER: OFF");
